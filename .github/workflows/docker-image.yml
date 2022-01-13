@@ -23,5 +23,6 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Push images
       run: |
+          docker tag shuangyuly/osmedeus:$(date +%Y-%m-%d) shuangyuly/osmedeus:latest
           docker push shuangyuly/osmedeus:$(date +%Y-%m-%d)
           docker push shuangyuly/osmedeus:latest
